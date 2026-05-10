@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umut Salman | Uygulama Portalı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0f172a; --card: #1e293b; --accent: #10b981; --text: #f8fafc; --blue: #3b82f6; --purple: #8b5cf6; --orange: #f59e0b; }
+        body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
+        
+        .portal-container { width: 100%; max-width: 600px; text-align: center; }
+        .portal-title { font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: 2px; color: #94a3b8; margin-bottom: 30px; }
+        
+        .grid-layout { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        
+        .nav-card { 
+            background: var(--card); 
+            padding: 20px; 
+            border-radius: 20px; 
+            text-decoration: none; 
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        
+        .nav-card b { font-size: 16px; display: block; margin-bottom: 4px; }
+        .nav-card span { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Renk Çizgileri */
+        .nav-card::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 5px; }
+        .btn-app::after { background: var(--blue); }
+        .btn-takip::after { background: var(--purple); }
+        .btn-an::after { background: var(--orange); }
+
+        .go-icon { background: rgba(255,255,255,0.1); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+<div class="portal-container">
+    <h2 class="portal-title">Umut Salman | Proje Yönetim Merkezi</h2>
+    
+    <div class="grid-layout">
+        <!-- KASA APP -->
+        <a href="https://ketagusalman-prog.github.io/kasa-app/" target="_blank" class="nav-card btn-app">
+            <div style="text-align: left;">
+                <span>Yönetim Paneli</span>
+                <b>Kasa Uygulaması (App)</b>
+            </div>
+            <div class="go-icon">🚀</div>
+        </a>
+
+        <!-- KASA TAKİP -->
+        <a href="https://ketagusalman-prog.github.io/kasa-takip/" target="_blank" class="nav-card btn-takip">
+            <div style="text-align: left;">
+                <span>Operasyonel İzleme</span>
+                <b>Kasa Takip Sistemi</b>
+            </div>
+            <div class="go-icon">📊</div>
+        </a>
+
+        <!-- KASA-N- -->
+        <a href="https://ketagusalman-prog.github.io/kasa-n-/" target="_blank" class="nav-card btn-an">
+            <div style="text-align: left;">
+                <span>Analiz & Raporlama</span>
+                <b>Kasa Analitik (N)</b>
+            </div>
+            <div class="go-icon">🔍</div>
+        </a>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 10px; color: #475569; letter-spacing: 1px;">
+        UNI-FREE DUTY FREE OPERATIONAL SYSTEMS
+    </p>
+</div>
+
+</body>
+</html>
