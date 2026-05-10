@@ -3,52 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umut Salman | Güvenli Giriş</title>
+    <title>Umut Salman | Güvenli Erişim Portalı</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #0f172a; --card: #1e293b; --accent: #10b981; --text: #f8fafc; --blue: #3b82f6; --purple: #8b5cf6; --orange: #f59e0b; --danger: #ef4444; }
+        :root { --bg: #0f172a; --card: #1e293b; --accent: #10b981; --text: #f8fafc; --blue: #3b82f6; --purple: #8b5cf6; --orange: #f59e0b; --cyan: #06b6d4; --danger: #ef4444; }
         body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
         
-        /* GİRİŞ EKRANI STİLLERİ */
+        /* GİRİŞ EKRANI */
         #loginOverlay { width: 100%; max-width: 400px; text-align: center; }
         .login-card { background: var(--card); padding: 30px; border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05); }
         .login-card h2 { font-weight: 800; font-size: 18px; margin-bottom: 20px; color: var(--accent); }
-        
-        input[type="password"] { 
-            width: 100%; background: #0f172a; border: 1px solid rgba(255,255,255,0.1); 
-            border-radius: 12px; padding: 15px; color: white; outline: none; 
-            margin-bottom: 15px; font-size: 16px; box-sizing: border-box; text-align: center;
-        }
-        
-        .btn-login { 
-            width: 100%; padding: 15px; border-radius: 12px; border: none; 
-            background: var(--accent); color: white; font-weight: 700; 
-            cursor: pointer; transition: 0.3s; text-transform: uppercase;
-        }
-        .btn-login:hover { opacity: 0.9; transform: scale(1.02); }
+        input[type="password"] { width: 100%; background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 15px; color: white; outline: none; margin-bottom: 15px; font-size: 16px; box-sizing: border-box; text-align: center; transition: 0.3s; }
+        input[type="password"]:focus { border-color: var(--accent); }
+        .btn-login { width: 100%; padding: 15px; border-radius: 12px; border: none; background: var(--accent); color: white; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
+        .btn-login:hover { opacity: 0.9; transform: scale(1.01); }
 
-        /* PORTAL EKRANI (BAŞLANGIÇTA GİZLİ) */
-        #portalContent { display: none; width: 100%; max-width: 600px; text-align: center; animation: fadeIn 0.5s ease; }
+        /* PORTAL İÇERİĞİ */
+        #portalContent { display: none; width: 100%; max-width: 600px; text-align: center; animation: fadeIn 0.5s ease forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .portal-title { font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: 2px; color: #94a3b8; margin-bottom: 30px; }
         .grid-layout { display: grid; grid-template-columns: 1fr; gap: 15px; }
         
-        .nav-card { 
-            background: var(--card); padding: 20px; border-radius: 20px; 
-            text-decoration: none; color: white; display: flex; 
-            align-items: center; justify-content: space-between; transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;
-        }
-        .nav-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
-        .nav-card::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 5px; }
+        .nav-card { background: var(--card); padding: 20px; border-radius: 20px; text-decoration: none; color: white; display: flex; align-items: center; justify-content: space-between; transition: 0.3s; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+        .nav-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .nav-card::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 6px; }
+        
+        /* Buton Renkleri */
         .btn-app::after { background: var(--blue); }
         .btn-takip::after { background: var(--purple); }
         .btn-an::after { background: var(--orange); }
+        .btn-belge::after { background: var(--cyan); }
         
-        .nav-card b { font-size: 16px; display: block; }
-        .nav-card span { font-size: 11px; color: #94a3b8; text-transform: uppercase; }
-        .go-icon { background: rgba(255,255,255,0.1); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .nav-card b { font-size: 16px; display: block; margin-bottom: 2px; }
+        .nav-card span { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+        .go-icon { background: rgba(255,255,255,0.07); width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
     </style>
 </head>
 <body>
@@ -57,10 +46,10 @@
     <div id="loginOverlay">
         <div class="login-card">
             <h2>GÜVENLİ ERİŞİM</h2>
-            <p style="font-size: 12px; color: #94a3b8; margin-bottom: 20px;">Lütfen yönetici şifresini giriniz.</p>
-            <input type="password" id="passInput" placeholder="••••••••" onkeypress="handleKey(event)">
-            <button class="btn-login" onclick="checkLogin()">GİRİŞ YAP</button>
-            <p id="errMsg" style="color: var(--danger); font-size: 12px; margin-top: 15px; display: none;">Hatalı Şifre!</p>
+            <p style="font-size: 12px; color: #94a3b8; margin-bottom: 20px;">Operasyonel Panel Girişi</p>
+            <input type="password" id="passInput" placeholder="Şifre Giriniz" onkeypress="handleKey(event)">
+            <button class="btn-login" onclick="checkLogin()">SİSTEME GİRİŞ</button>
+            <p id="errMsg" style="color: var(--danger); font-size: 12px; margin-top: 15px; display: none; font-weight: 600;">⚠️ ŞİFRE HATALI!</p>
         </div>
     </div>
 
@@ -69,23 +58,32 @@
         <h2 class="portal-title">Umut Salman | Proje Yönetim Merkezi</h2>
         
         <div class="grid-layout">
+            <!-- KASA APP -->
             <a href="https://ketagusalman-prog.github.io/kasa-app/" target="_blank" class="nav-card btn-app">
                 <div style="text-align: left;"><span>Yönetim Paneli</span><b>Kasa Uygulaması (App)</b></div>
                 <div class="go-icon">🚀</div>
             </a>
 
+            <!-- KASA TAKİP -->
             <a href="https://ketagusalman-prog.github.io/kasa-takip/" target="_blank" class="nav-card btn-takip">
                 <div style="text-align: left;"><span>Operasyonel İzleme</span><b>Kasa Takip Sistemi</b></div>
                 <div class="go-icon">📊</div>
             </a>
 
+            <!-- KASA-N- -->
             <a href="https://ketagusalman-prog.github.io/kasa-n-/" target="_blank" class="nav-card btn-an">
                 <div style="text-align: left;"><span>Analiz & Raporlama</span><b>Kasa Analitik (N)</b></div>
                 <div class="go-icon">🔍</div>
             </a>
+
+            <!-- BELGELER (YENİ EKLEME) -->
+            <a href="https://ketagusalman-prog.github.io/belgeler/" target="_blank" class="nav-card btn-belge">
+                <div style="text-align: left;"><span>Dosya Arşivi</span><b>Operasyonel Belgeler</b></div>
+                <div class="go-icon">📁</div>
+            </a>
         </div>
         
-        <button onclick="logout()" style="margin-top: 30px; background: transparent; border: 1px solid #475569; color: #475569; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-size: 11px;">OTURUMU KAPAT</button>
+        <button onclick="logout()" style="margin-top: 40px; background: transparent; border: 1px solid #334155; color: #64748b; padding: 10px 25px; border-radius: 12px; cursor: pointer; font-size: 10px; font-weight: 700; text-transform: uppercase; transition: 0.3s;">Oturumu Kapat</button>
     </div>
 
 <script>
@@ -98,11 +96,11 @@
         if(val === SECRET_PASS) {
             document.getElementById("loginOverlay").style.display = "none";
             document.getElementById("portalContent").style.display = "block";
-            // Şifreyi tarayıcıya geçici olarak kaydet (opsiyonel)
-            sessionStorage.setItem("isLoggedIn", "true");
+            sessionStorage.setItem("auth_portal", "active");
         } else {
             err.style.display = "block";
             document.getElementById("passInput").value = "";
+            setTimeout(() => { err.style.display = "none"; }, 2000);
         }
     }
 
@@ -111,13 +109,12 @@
     }
 
     function logout() {
-        sessionStorage.removeItem("isLoggedIn");
+        sessionStorage.removeItem("auth_portal");
         location.reload();
     }
 
-    // Sayfa yenilendiğinde giriş yapılmış mı kontrol et
     window.onload = () => {
-        if(sessionStorage.getItem("isLoggedIn") === "true") {
+        if(sessionStorage.getItem("auth_portal") === "active") {
             document.getElementById("loginOverlay").style.display = "none";
             document.getElementById("portalContent").style.display = "block";
         }
