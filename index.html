@@ -6,7 +6,7 @@
     <title>Umut Salman | Güvenli Erişim Portalı</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #0f172a; --card: #1e293b; --accent: #10b981; --text: #f8fafc; --blue: #3b82f6; --purple: #8b5cf6; --orange: #f59e0b; --cyan: #06b6d4; --danger: #ef4444; }
+        :root { --bg: #0f172a; --card: #1e293b; --accent: #10b981; --text: #f8fafc; --blue: #3b82f6; --purple: #8b5cf6; --orange: #f59e0b; --cyan: #06b6d4; --sheets: #1d8543; --danger: #ef4444; }
         body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
         
         /* GİRİŞ EKRANI */
@@ -29,11 +29,12 @@
         .nav-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .nav-card::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 6px; }
         
-        /* Buton Renkleri */
+        /* Buton Yan Renkleri */
         .btn-app::after { background: var(--blue); }
         .btn-takip::after { background: var(--purple); }
         .btn-an::after { background: var(--orange); }
         .btn-belge::after { background: var(--cyan); }
+        .btn-excel::after { background: var(--sheets); }
         
         .nav-card b { font-size: 16px; display: block; margin-bottom: 2px; }
         .nav-card span { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -76,10 +77,16 @@
                 <div class="go-icon">🔍</div>
             </a>
 
-            <!-- BELGELER (YENİ EKLEME) -->
+            <!-- BELGELER -->
             <a href="https://ketagusalman-prog.github.io/belgeler/" target="_blank" class="nav-card btn-belge">
                 <div style="text-align: left;"><span>Dosya Arşivi</span><b>Operasyonel Belgeler</b></div>
                 <div class="go-icon">📁</div>
+            </a>
+
+            <!-- EXCEL DOSYALARIM (YENİ EKLEME) -->
+            <a href="https://docs.google.com/spreadsheets/d/1ryWUfkUsDKUYijwr_a6VF-2WdWWul5nRPC-WoEVDYfM/edit?gid=669790890#gid=669790890" target="_blank" class="nav-card btn-excel">
+                <div style="text-align: left;"><span>Cloud Veri Tabanı</span><b>Excel Dosyalarım</b></div>
+                <div class="go-icon">📅</div>
             </a>
         </div>
         
