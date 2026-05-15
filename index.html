@@ -6,7 +6,7 @@
     <title>Umut Salman | Güvenli Erişim Portalı</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #0f172a; --card: #1e293b; --accent: #10b981; --text: #f8fafc; --blue: #3b82f6; --purple: #8b5cf6; --orange: #f59e0b; --cyan: #06b6d4; --sheets: #1d8543; --danger: #ef4444; }
+        :root { --bg: #0f172a; --card: #1e293b; --accent: #10b981; --text: #f8fafc; --blue: #3b82f6; --purple: #8b5cf6; --orange: #f59e0b; --cyan: #06b6d4; --sheets: #1d8543; --danger: #ef4444; --indigo: #6366f1; }
         body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; }
         
         /* GİRİŞ EKRANI */
@@ -33,6 +33,7 @@
         .btn-app::after { background: var(--blue); }
         .btn-takip::after { background: var(--purple); }
         .btn-an::after { background: var(--orange); }
+        .btn-analiz::after { background: var(--indigo); } /* Yeni buton rengi */
         .btn-belge::after { background: var(--cyan); }
         .btn-excel::after { background: var(--sheets); }
         
@@ -77,13 +78,19 @@
                 <div class="go-icon">🔍</div>
             </a>
 
+            <!-- STRATEJİK ANALİZ (YENİ EKLEME) -->
+            <a href="https://ketagusalman-prog.github.io/analiz/" target="_blank" class="nav-card btn-analiz">
+                <div style="text-align: left;"><span>Performans Verileri</span><b>Stratejik Analiz Paneli</b></div>
+                <div class="go-icon">📈</div>
+            </a>
+
             <!-- BELGELER -->
             <a href="https://ketagusalman-prog.github.io/belgeler/" target="_blank" class="nav-card btn-belge">
                 <div style="text-align: left;"><span>Dosya Arşivi</span><b>Operasyonel Belgeler</b></div>
                 <div class="go-icon">📁</div>
             </a>
 
-            <!-- EXCEL DOSYALARIM (YENİ EKLEME) -->
+            <!-- EXCEL DOSYALARIM -->
             <a href="https://docs.google.com/spreadsheets/d/1ryWUfkUsDKUYijwr_a6VF-2WdWWul5nRPC-WoEVDYfM/edit?gid=669790890#gid=669790890" target="_blank" class="nav-card btn-excel">
                 <div style="text-align: left;"><span>Cloud Veri Tabanı</span><b>Excel Dosyalarım</b></div>
                 <div class="go-icon">📅</div>
